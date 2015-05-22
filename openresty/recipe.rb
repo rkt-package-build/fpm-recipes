@@ -2,16 +2,16 @@ class Openresty < FPM::Cookery::Recipe
   description 'a high performance web server and a reverse proxy server'
 
   name     'openresty'
-  version  '1.5.11.1'
+  version  '1.7.10.1'
   revision 13
   homepage 'http://openresty.org/'
   source   "http://openresty.org/download/ngx_openresty-#{version}.tar.gz"
-  sha256   '975f7a104a055d689a69655d69d9ee7ef9a4700d8927e5d324c440ea71a66a3b'
+  sha256   '4fd0d73e5955319cee51c6fa574e254be4538a63ae3e673c35eacdf9d4bce679'
 
   section 'httpd'
 
-  build_depends 'build-essential', 'git', 'libgeoip-dev', 'libpcre3-dev', 'zlib1g-dev', 'libssl-dev (<< 1.0.0)', 'libgd2-noxpm-dev', 'libperl-dev'
-  depends       'libpcre3', 'zlib1g', 'libssl0.9.8', 'libgeoip1', 'libgd2-noxpm-dev'
+  build_depends 'build-essential', 'git', 'libgeoip-dev', 'libpcre3-dev', 'zlib1g-dev', 'libssl-dev', 'libgd2-noxpm-dev', 'libperl-dev'
+  depends       'libpcre3', 'zlib1g', 'libssl1.0.0', 'libgeoip1', 'libgd2-noxpm-dev'
 
   provides  'nginx-full', 'nginx-common'
   replaces  'nginx-full', 'nginx-common'
